@@ -12,7 +12,7 @@ variable "base_tags" {
   type = map
   default = {
     ManagedBy = "terraform"
-    Platform  = "azuredevops"
+    Platform  = "terraformTest-azureResourceGroup"
   }
   description = "Base Tags to place on all assets created by module"
 }
