@@ -42,7 +42,7 @@ jobs:
       provider: 'azurerm'
       command: 'init'
       workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
-      backendServiceArm: 'ThreeTierSample-RG-SP'
+      backendServiceArm: 'ARMForTerraform'
       backendAzureRmResourceGroupName: 'threeTierSample'
       backendAzureRmStorageAccountName: 'threetiersample'
       backendAzureRmContainerName: 'tfstate'
@@ -68,7 +68,7 @@ jobs:
       provider: 'azurerm'
       command: 'plan'
       workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
-      environmentServiceNameAzureRM: 'ThreeTierSample-RG-SP'
+      environmentServiceNameAzureRM: 'ARMForTerraform'
     env:
       TF_WORKSPACE: ${{ parameters.workspaceSelection }}
       AZDO_ORG_SERVICE_URL: $(AZDO_ORG_SERVICE_URL)
@@ -80,7 +80,7 @@ jobs:
       provider: 'azurerm'
       command: '${{parameters.terraformOperation}}'
       workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
-      environmentServiceNameAzureRM: 'ThreeTierSample-RG-SP'
+      environmentServiceNameAzureRM: 'ARMForTerraform'
     env:
       TF_WORKSPACE: ${{ parameters.workspaceSelection }}
       AZDO_ORG_SERVICE_URL: $(AZDO_ORG_SERVICE_URL)
