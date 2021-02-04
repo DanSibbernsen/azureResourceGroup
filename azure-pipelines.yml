@@ -68,7 +68,7 @@ jobs:
       provider: 'azurerm'
       command: 'plan'
       workingDirectory: '$(System.DefaultWorkingDirectory)'
-      environmentServiceNameAzureRM: 'ARMForterraformTest-resourceGroup'
+      environmentServiceNameAzureRM: 'tfresourcegroup-ARM'
     env:
       TF_WORKSPACE: ${{ parameters.workspaceSelection }}
       AZDO_ORG_SERVICE_URL: $(AZDO_ORG_SERVICE_URL)
@@ -80,7 +80,7 @@ jobs:
       provider: 'azurerm'
       command: '${{parameters.terraformOperation}}'
       workingDirectory: '$(System.DefaultWorkingDirectory)'
-      environmentServiceNameAzureRM: 'ARMForterraformTest-resourceGroup'
+      environmentServiceNameAzureRM: 'tfresourcegroup-ARM'
     env:
       TF_WORKSPACE: ${{ parameters.workspaceSelection }}
       AZDO_ORG_SERVICE_URL: $(AZDO_ORG_SERVICE_URL)
