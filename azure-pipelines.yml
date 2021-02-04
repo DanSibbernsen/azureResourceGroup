@@ -42,11 +42,11 @@ jobs:
       provider: 'azurerm'
       command: 'init'
       workingDirectory: '$(System.DefaultWorkingDirectory)'
-      backendServiceArm: 'ARMForterraformTest-resourceGroup'
-      backendAzureRmResourceGroupName: 'terraformTest-resourceGroup-rg'
-      backendAzureRmStorageAccountName: 'terraformtestresourcegroupstorageaccount'
-      backendAzureRmContainerName: 'terraformtestresourcegroupstorageaccountcontainer'
-      backendAzureRmKey: 'terraform.tfstate'
+      backendServiceArm: 'tfresourcegroup-ARM'
+      backendAzureRmResourceGroupName: 'tfresourcegroup'
+      backendAzureRmStorageAccountName: 'tfstate'
+      backendAzureRmContainerName: 'tfstate'
+      backendAzureRmKey: 'tfstate'
 
   - task: CmdLine@2
     inputs:
