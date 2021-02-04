@@ -44,7 +44,7 @@ jobs:
       workingDirectory: '$(System.DefaultWorkingDirectory)'
       backendServiceArm: 'tfresourcegroup-ARM'
       backendAzureRmResourceGroupName: 'tfresourcegroup'
-      backendAzureRmStorageAccountName: 'tfstate'
+      backendAzureRmStorageAccountName: 'tfresourcegroup'
       backendAzureRmContainerName: 'tfstate'
       backendAzureRmKey: 'tfstate'
 
