@@ -44,8 +44,8 @@ jobs:
       workingDirectory: '$(System.DefaultWorkingDirectory)'
       backendServiceArm: 'ARMForterraformTest-resourceGroup'
       backendAzureRmResourceGroupName: 'terraformTest-resourceGroup-rg'
-      backendAzureRmStorageAccountName: 'terraformTest-resourceGroup-storageaccount'
-      backendAzureRmContainerName: 'terraformTest-resourceGroup-container'
+      backendAzureRmStorageAccountName: 'terraformtestresourcegroupstorageaccount'
+      backendAzureRmContainerName: 'terraformtestresourcegroupstorageaccountcontainer'
       backendAzureRmKey: 'terraform.tfstate'
 
   - task: CmdLine@2
