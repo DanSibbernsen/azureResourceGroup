@@ -41,7 +41,7 @@ jobs:
     inputs:
       provider: 'azurerm'
       command: 'init'
-      workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
+      workingDirectory: '$(System.DefaultWorkingDirectory)'
       backendServiceArm: 'ARMForterraformTest-resourceGroup'
       backendAzureRmResourceGroupName: 'threeTierSample'
       backendAzureRmStorageAccountName: 'threetiersample'
@@ -57,7 +57,7 @@ jobs:
     inputs:
       provider: 'azurerm'
       command: 'validate'
-      workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
+      workingDirectory: '$(System.DefaultWorkingDirectory)'
     env:
       TF_WORKSPACE: ${{ parameters.workspaceSelection }}
 
@@ -67,7 +67,7 @@ jobs:
     inputs:
       provider: 'azurerm'
       command: 'plan'
-      workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
+      workingDirectory: '$(System.DefaultWorkingDirectory)'
       environmentServiceNameAzureRM: 'ARMForterraformTest-resourceGroup'
     env:
       TF_WORKSPACE: ${{ parameters.workspaceSelection }}
@@ -79,7 +79,7 @@ jobs:
     inputs:
       provider: 'azurerm'
       command: '${{parameters.terraformOperation}}'
-      workingDirectory: '$(System.DefaultWorkingDirectory)/terraform'
+      workingDirectory: '$(System.DefaultWorkingDirectory)'
       environmentServiceNameAzureRM: 'ARMForterraformTest-resourceGroup'
     env:
       TF_WORKSPACE: ${{ parameters.workspaceSelection }}
