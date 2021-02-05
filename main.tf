@@ -1,4 +1,4 @@
-resource "azurerm_resource_group" "main" {
+data "azurerm_resource_group" "main" {
   name = "terraformTest-resourceGroups"
 }
 
