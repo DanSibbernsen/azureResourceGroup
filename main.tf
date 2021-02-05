@@ -1,5 +1,5 @@
 data "azurerm_resource_group" "main" {
-  name = "terraformTest-resourceGroups"
+  name = "tfresourcegroup"
 }
 
 module "resourcegroup" {
