@@ -41,7 +41,6 @@ jobs:
     inputs:
       provider: 'azurerm'
       command: 'init'
-      workingDirectory: '$(System.DefaultWorkingDirectory)'
       backendServiceArm: 'tfresourcegroup-ARM'
       backendAzureRmResourceGroupName: 'tfresourcegroup'
       backendAzureRmStorageAccountName: 'tfresourcegroup'
@@ -57,7 +56,6 @@ jobs:
     inputs:
       provider: 'azurerm'
       command: 'validate'
-      workingDirectory: '$(System.DefaultWorkingDirectory)'
     env:
       TF_WORKSPACE: ${{ parameters.workspaceSelection }}
 
@@ -67,21 +65,15 @@ jobs:
     inputs:
       provider: 'azurerm'
       command: 'plan'
-      workingDirectory: '$(System.DefaultWorkingDirectory)'
       environmentServiceNameAzureRM: 'tfresourcegroup-ARM'
     env:
       TF_WORKSPACE: ${{ parameters.workspaceSelection }}
-      AZDO_ORG_SERVICE_URL: $(AZDO_ORG_SERVICE_URL)
-      AZDO_PERSONAL_ACCESS_TOKEN: $(AZDO_PERSONAL_ACCESS_TOKEN)
 
   - task: TerraformTaskV1@0
     displayName: Terraform ${{parameters.terraformOperation}}
     inputs:
       provider: 'azurerm'
       command: '${{parameters.terraformOperation}}'
-      workingDirectory: '$(System.DefaultWorkingDirectory)'
       environmentServiceNameAzureRM: 'tfresourcegroup-ARM'
     env:
       TF_WORKSPACE: ${{ parameters.workspaceSelection }}
-      AZDO_ORG_SERVICE_URL: $(AZDO_ORG_SERVICE_URL)
-      AZDO_PERSONAL_ACCESS_TOKEN: $(AZDO_PERSONAL_ACCESS_TOKEN)
