@@ -50,7 +50,7 @@ jobs:
 
   - task: CmdLine@2
     inputs:
-      script: 'terraform workspace select ${{ parameters.workspaceSelection } || terraform workspace new ${{ parameters.workspaceSelection }}'
+      script: 'terraform workspace select ${{ parameters.workspaceSelection }} || terraform workspace new ${{ parameters.workspaceSelection }}'
 
   - task: TerraformTaskV1@0
     displayName: Terraform validate
