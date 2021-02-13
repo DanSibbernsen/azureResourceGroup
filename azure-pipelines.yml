@@ -41,7 +41,7 @@ jobs:
     inputs:
       provider: 'azurerm'
       command: 'init'
-      backendServiceArm: 'tfresourcegroup-ARM'
+      backendServiceArm: 'Subscription-scoped-ARM'
       backendAzureRmResourceGroupName: 'tfresourcegroup'
       backendAzureRmStorageAccountName: 'tfresourcegroup'
       backendAzureRmContainerName: 'tfstate'
@@ -65,7 +65,7 @@ jobs:
     inputs:
       provider: 'azurerm'
       command: 'plan'
-      environmentServiceNameAzureRM: 'tfresourcegroup-ARM'
+      environmentServiceNameAzureRM: 'Subscription-scoped-ARM'
     env:
       TF_WORKSPACE: ${{ parameters.workspaceSelection }}
 
@@ -74,6 +74,6 @@ jobs:
     inputs:
       provider: 'azurerm'
       command: '${{parameters.terraformOperation}}'
-      environmentServiceNameAzureRM: 'tfresourcegroup-ARM'
+      environmentServiceNameAzureRM: 'Subscription-scoped-ARM'
     env:
       TF_WORKSPACE: ${{ parameters.workspaceSelection }}
